@@ -18,7 +18,7 @@ public class ToioMoveDemo : MonoBehaviour
     // Start is called before the first frame update
     async void Start()
     {
-        cm = new CubeManager();
+        cm = new CubeManager(ConnectType.Real);
         cubes = await cm.MultiConnect(2);
 
         foreach (var cube in cubes)
@@ -108,6 +108,7 @@ public class ToioMoveDemo : MonoBehaviour
             }
         }
         foreach (var navigator in cm.syncNavigators){
+            Debug.Log("====== Navigator Move ======");
             if(moveC1 == 1){
                 var mv1 = cm.navigators[0].Navi2Target(150, 150, maxSpd:speed).Exec();
                 if (mv1.reached){
