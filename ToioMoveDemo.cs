@@ -102,13 +102,13 @@ public class ToioMoveDemo : MonoBehaviour
                 // cm.navigators[1].ClearOther();
                 // cm.navigators[0].AddOther(cm.navigators[1]); // to make it see
                 // cm.navigators[1].AddOther(cm.navigators[0]);
+                Debug.Log("====== Navigator Move ======");
                 moveC1 = 1;
                 moveC2 = 1;
                 break;
             }
         }
         foreach (var navigator in cm.syncNavigators){
-            Debug.Log("====== Navigator Move ======");
             if(moveC1 == 1){
                 var mv1 = cm.navigators[0].Navi2Target(150, 150, maxSpd:speed).Exec();
                 if (mv1.reached){
